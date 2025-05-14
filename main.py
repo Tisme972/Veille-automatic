@@ -116,6 +116,8 @@ def run(webhook):
 
   if os.path.exists('old_output.txt'):
     os.remove('new_output.txt')
+  with open('new_output.txt', 'w') as f:
+    pass 
   with requests.post(url, headers=headers, data=json.dumps(payload)) as response:  # Enable streaming mode
       for chunk in response.iter_content(chunk_size=1000000024):  # Process chunks of 1 KB
           with open('new_output.txt', 'ab') as f:
@@ -185,6 +187,7 @@ while True:
     try:
       run(webhook)
     except Exception as e:
+      print("error:",str(e))
       headers = {"Content-Type": "application/json"}
       json_data = {
           "embeds": [
