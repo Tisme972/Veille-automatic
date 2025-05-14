@@ -114,7 +114,7 @@ def run(webhook):
       """
   }
 
-  if os.path.exists('old_output.txt'):
+  if os.path.exists('old_output.txt') and os.path.exists('new_output.txt'):
     os.remove('new_output.txt')
   with open('new_output.txt', 'w') as f:
     pass 
