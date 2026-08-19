@@ -183,7 +183,7 @@ def run(webhook):
   sleep_1_day()
 
 while True:
-    webhook = "https://discord.com/api/webhooks/1364300507249774622/sQwomrCtUiKUb_oyoarzOOQEqO8anYj8S2qt3L7piRecJ5oDUxgNNhPbEWoLZmOjCf0i"
+    webhook = "https://discord.com/api/webhooks/XXXXX"
     try:
       run(webhook)
     except Exception as e:
